@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% endblock %}
+{% block title %}GSB{% endblock %}
+
+{% block body %}
+
+<center>
+<h3> Voici vos frais forfaitaire </h3>
+<div class="example-wrapper">
+   <div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+        <table class=" tabel table-striped">
+        <tr>
+                
+                
+                <td> libelle</td>
+                <td> quantite</td>
+                
+                
+            </tr>
+        {% for lefraisForfaitaire in listeForfaitaire %}
+            <tr>
+                
+                
+                <td> {{lefraisForfaitaire.idType.libelle}}</td>
+                <td> {{lefraisForfaitaire.qte}}</td>
+                
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</center>
+<center>
+<h3> Voici vos frais hors forfait  </h3>
+<div class="example-wrapper">
+   <div class="container mt-4">
+    <div class="row">
+        <div class="col-md-8">
+        <table class=" tabel table-striped">
+        <tr>
+                
+                
+                <td> libelle</td>
+                <td> montant</td>
+                <td> date</td>
+                
+            </tr>
+        {% for leHorsForfait in listeHorsforfait %}
+            <tr>
+                
+                
+                <td> {{leHorsForfait.libelle}}</td>
+                <td> {{leHorsForfait.montant}}</td>
+                <td>{{leHorsForfait.date|date("d/m/Y")}}</td>
+                
+            </tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</center>
+{% endblock %}

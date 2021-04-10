@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+<meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+</head>
+    {% block nav %}
+    <body>
+    <header>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        
+     <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav mr-auto">
+				<li><a href="{{path('Accueil')}}">Home&nbsp;</a></li>
+        </ul>
+       
+        <ul class="navbar-nav mr-auto">
+        <li><a href="{{path('fiche')}}">Fiche Frais&nbsp;</a></li>
+		</ul> 
+    <ul class="navbar-nav mr-auto">
+        <li><a href="{{path('historique')}}">Historique</a></li>
+		</ul> 
+    <ul class="navbar-nav ">
+        <li><a href="{{path('security_logout')}}">Deconnexion</a></li>
+		</ul> 
+  </div>
+        
+    </nav>
+     {% endblock %}   
+    </header>
+        {% block body %}{% endblock %}
+        {% block javascripts %}
+        <script src="JavaScript/jquery-3.5.1.min.js"></script>
+		    <script src="JavaScript/FormulaireScript.js"></script>{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+{% block stylesheets %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
+    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
+</style>
+{% endblock %}
+{% block title %}GSB{% endblock %}
+
+{% block body %}
+
+
+<div class="example-wrapper">
+    <center>
+    
+{{form_start(leform)}}
+<h3> date  </h3>
+{{form_widget(leform.date)}}
+<h3> nom </h3>
+{{form_widget(leform.libelle)}}
+<h3> numero bon de facture  </h3>
+{{form_widget(leform.numFacture)}}
+<h3> montant  </h3>
+{{form_widget(leform.montant, {'attr': {'min':'0'}})}}
+<button type="submit" class="btn btn-primary" name="btnSubmit" value="envoyer">Cree</button><br>
+{{form_end(leform)}}
+
+</center>
+
+    
+    
+    
+    
+</div>
+
+{% endblock %}
