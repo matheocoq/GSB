@@ -111,7 +111,7 @@ class FormulaireController extends AbstractController
         $repository= $this->getDoctrine()->getRepository(Forfaitaire::class);
         $lesForfaitaire=$repository->findLesForfaitaire($fiche->getIdFiche());
         $laSomme=$repository->listProc($fiche->getIdFiche());
-        \dump($laSomme);
+        
         $repository= $this->getDoctrine()->getRepository(HorsForfait::class);
         $lesHorsForfait=$repository->findLesHorsForfait($fiche->getIdFiche());
         
